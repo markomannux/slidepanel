@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/slidepanel.css"/>
+    <script type="text/javascript" src="lib/jquery.min.js"></script> 
+    <script type="text/javascript" src="lib/jgestures.min.js"></script> 
+    <script type="text/javascript" src="lib/jquery-ui-1.10.1.custom.min.js"></script> 
+    <script type="text/javascript" src="js/slidepanel.js"/></script>
+    <style>
+      body {
+        margin: 0
+      }
+    </style>
+    <script>
+      $(function() {
+        var panel = $("#panel").slidepanel({location:'left'});
+        $("#show").click(function() {
+          panel.slidepanel('show');
+        });
+        $("#hide").click(function() {
+          panel.slidepanel('hide');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="panel">
+        some content here
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non turpis quam. Aliquam erat volutpat. Quisque mollis purus convallis lorem scelerisque non ultrices augue pulvinar. Nullam faucibus nisl in leo tincidunt nec mollis ante pretium. Aenean luctus, justo nec euismod pulvinar, mi metus bibendum risus, nec condimentum libero lacus cursus massa. In vel scelerisque nisl. Praesent est sem, laoreet a ornare vitae, tincidunt eu tellus. Nulla a sapien orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin odio risus, mollis at faucibus nec, ultricies non tortor. Suspendisse fermentum enim in orci rutrum consectetur. Nam ipsum odio, vulputate quis tincidunt non, rhoncus in ligula. Mauris ultricies, arcu eu hendrerit condimentum, lacus nibh aliquet ante, a interdum turpis elit sit amet justo. Morbi molestie bibendum quam, eu tempus lacus pharetra id.
+    </p>
+    <p>
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris et ante lectus, quis cursus lacus. Nulla ultricies luctus dolor, quis bibendum enim laoreet vel. Nam euismod blandit felis, ut sagittis eros elementum vitae. Vestibulum rhoncus, lacus sed imperdiet dignissim, sem tellus convallis turpis, eget lacinia felis tellus eget magna. Suspendisse lacinia bibendum mattis. Aliquam erat volutpat. Nunc condimentum, sapien ac sodales pretium, est quam mattis massa, ut pretium nisl arcu nec felis. Donec auctor magna ac dolor posuere at egestas nulla malesuada.
+
+    </p>
+    <p>
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec iaculis, dolor eget elementum lobortis, mauris sapien imperdiet ligula, ut laoreet urna eros a metus. Suspendisse quis libero vel sapien dapibus ultricies. Sed scelerisque varius mauris. Cras condimentum felis vel turpis commodo fermentum. Mauris ullamcorper justo mattis diam rutrum volutpat. Sed in massa sit amet augue pulvinar dictum. In adipiscing egestas mattis. Duis consectetur lectus sit amet dui bibendum lacinia. Maecenas ut bibendum ligula. Proin ligula justo, convallis et sollicitudin vel, sagittis at diam. Nulla dignissim dignissim arcu, lobortis laoreet libero bibendum id. Integer in massa nec risus dapibus pharetra quis et sapien. Donec risus massa, sollicitudin id pharetra et, molestie eget tortor. Mauris varius risus eu augue suscipit facilisis.
+
+    </p>
+    <p>
+Nam sodales vestibulum dictum. Maecenas porta cursus eros. Vivamus accumsan porta augue at vestibulum. Curabitur et eleifend mi. Donec in diam tortor, a fringilla velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus eros enim, hendrerit sed gravida eget, dignissim vitae magna. Mauris at magna ut tellus porta rutrum. Nullam eu placerat nisi. Integer vitae tincidunt tellus. Donec a neque odio.
+
+    </p>
+    <p>
+Vivamus ultrices tristique urna vel tristique. Nam eget feugiat erat. Phasellus ipsum mauris, interdum vel consequat sed, venenatis quis nisl. Proin egestas, felis quis blandit egestas, purus leo ultricies neque, ut ultrices nunc dui at libero. Aliquam eu mattis lacus. Quisque vel orci at ante congue ornare. Proin ut turpis orci. Curabitur nisl metus, auctor ultrices bibendum ac, consequat in nisi. Sed sed dolor turpis. Maecenas id lacus tortor, quis tincidunt turpis. Suspendisse sit amet tellus ante. Maecenas lacinia porta leo nec interdum. In metus justo, ornare id lacinia eget, mollis egestas augue. Phasellus nunc tortor, elementum vitae imperdiet eu, sagittis tempor turpis.
+    </p>
+    </div>
+    <div id="content">
+    <div style="float:right">
+      <button id="show">Show</button>
+      <button id="hide">Hide</button>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non turpis quam. Aliquam erat volutpat. Quisque mollis purus convallis lorem scelerisque non ultrices augue pulvinar. Nullam faucibus nisl in leo tincidunt nec mollis ante pretium. Aenean luctus, justo nec euismod pulvinar, mi metus bibendum risus, nec condimentum libero lacus cursus massa. In vel scelerisque nisl. Praesent est sem, laoreet a ornare vitae, tincidunt eu tellus. Nulla a sapien orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin odio risus, mollis at faucibus nec, ultricies non tortor. Suspendisse fermentum enim in orci rutrum consectetur. Nam ipsum odio, vulputate quis tincidunt non, rhoncus in ligula. Mauris ultricies, arcu eu hendrerit condimentum, lacus nibh aliquet ante, a interdum turpis elit sit amet justo. Morbi molestie bibendum quam, eu tempus lacus pharetra id.
+    </p>
+    <p>
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris et ante lectus, quis cursus lacus. Nulla ultricies luctus dolor, quis bibendum enim laoreet vel. Nam euismod blandit felis, ut sagittis eros elementum vitae. Vestibulum rhoncus, lacus sed imperdiet dignissim, sem tellus convallis turpis, eget lacinia felis tellus eget magna. Suspendisse lacinia bibendum mattis. Aliquam erat volutpat. Nunc condimentum, sapien ac sodales pretium, est quam mattis massa, ut pretium nisl arcu nec felis. Donec auctor magna ac dolor posuere at egestas nulla malesuada.
+
+    </p>
+    <p>
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec iaculis, dolor eget elementum lobortis, mauris sapien imperdiet ligula, ut laoreet urna eros a metus. Suspendisse quis libero vel sapien dapibus ultricies. Sed scelerisque varius mauris. Cras condimentum felis vel turpis commodo fermentum. Mauris ullamcorper justo mattis diam rutrum volutpat. Sed in massa sit amet augue pulvinar dictum. In adipiscing egestas mattis. Duis consectetur lectus sit amet dui bibendum lacinia. Maecenas ut bibendum ligula. Proin ligula justo, convallis et sollicitudin vel, sagittis at diam. Nulla dignissim dignissim arcu, lobortis laoreet libero bibendum id. Integer in massa nec risus dapibus pharetra quis et sapien. Donec risus massa, sollicitudin id pharetra et, molestie eget tortor. Mauris varius risus eu augue suscipit facilisis.
+
+    </p>
+    <p>
+Nam sodales vestibulum dictum. Maecenas porta cursus eros. Vivamus accumsan porta augue at vestibulum. Curabitur et eleifend mi. Donec in diam tortor, a fringilla velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus eros enim, hendrerit sed gravida eget, dignissim vitae magna. Mauris at magna ut tellus porta rutrum. Nullam eu placerat nisi. Integer vitae tincidunt tellus. Donec a neque odio.
+
+    </p>
+    <p>
+Vivamus ultrices tristique urna vel tristique. Nam eget feugiat erat. Phasellus ipsum mauris, interdum vel consequat sed, venenatis quis nisl. Proin egestas, felis quis blandit egestas, purus leo ultricies neque, ut ultrices nunc dui at libero. Aliquam eu mattis lacus. Quisque vel orci at ante congue ornare. Proin ut turpis orci. Curabitur nisl metus, auctor ultrices bibendum ac, consequat in nisi. Sed sed dolor turpis. Maecenas id lacus tortor, quis tincidunt turpis. Suspendisse sit amet tellus ante. Maecenas lacinia porta leo nec interdum. In metus justo, ornare id lacinia eget, mollis egestas augue. Phasellus nunc tortor, elementum vitae imperdiet eu, sagittis tempor turpis.
+    </p>
+    </div>
+</body>
+</html>

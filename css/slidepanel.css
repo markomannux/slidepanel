@@ -1,0 +1,19 @@
+.panel {
+  width: 204px;
+  background-color: gray;
+  height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  z-index: 1000;
+}
+
+.trigger-area {
+  width: 204px;
+  min-height: 100%;
+  position: fixed;
+  z-index: 999;
+}
+
+.right {
+  right: 0;
+}
