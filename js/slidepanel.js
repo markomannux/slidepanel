@@ -10,14 +10,9 @@
         'width'            : '250'
       }, options);
 
-      var hiddenPosition =  settings.width + 'px'
-      if (settings.location == 'left') {
-        hiddenPosition = '-' + hiddenPosition
-      }
+      this.data('width', settings.width)
+      methods['setLocation'].apply(this, [settings.location]);
 
-      this.hide();
-      this.data('hiddenPosition', hiddenPosition)
-      this.data('visiblePosition', '0')
       var $panelContent = $('<div class="panel-content"></div>').html(this.html());
 
 
@@ -27,7 +22,6 @@
       this.width(settings.width);
       this.addClass(settings.location);
 
-      this.css('transform', 'translateX(' + this.data('hiddenPosition') + ')');
       var self = this;
 
       function show(event) {
@@ -83,7 +77,21 @@
               self.hide();
             }
             );
-          }
+          },
+
+    setLocation: function(location) {
+      
+      this.hide({duration:0});
+      var hiddenPosition = this.data('width') + 'px'
+      if (location == 'left') {
+        hiddenPosition = '-' + hiddenPosition
+      }
+
+      this.data('hiddenPosition', hiddenPosition)
+      this.removeClass('left right');
+      this.addClass(location);
+      this.animate({transform: 'translateX(' + this.data('hiddenPosition') + ')'})
+    }
 
   };
 

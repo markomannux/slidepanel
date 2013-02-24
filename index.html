@@ -68,6 +68,12 @@ table {
         $("#hide").click(function() {
           panel.slidepanel('hide');
         });
+        $("#right").click(function() {
+          panel.slidepanel('setLocation', 'right');
+        });
+        $("#left").click(function() {
+          panel.slidepanel('setLocation', 'left');
+        });
       });
     </script>
   </head>
@@ -89,6 +95,8 @@ Vivamus ultrices tristique urna vel tristique. Nam eget feugiat erat. Phasellus 
     <div id="content">
     <div style="float:right">
       <button id="show">Show</button>
+      <button id="right">Right</button>
+      <button id="left">Left</button>
     </div>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non turpis quam. Aliquam erat volutpat. Quisque mollis purus convallis lorem scelerisque non ultrices augue pulvinar. Nullam faucibus nisl in leo tincidunt nec mollis ante pretium. Aenean luctus, justo nec euismod pulvinar, mi metus bibendum risus, nec condimentum libero lacus cursus massa. In vel scelerisque nisl. Praesent est sem, laoreet a ornare vitae, tincidunt eu tellus. Nulla a sapien orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin odio risus, mollis at faucibus nec, ultricies non tortor. Suspendisse fermentum enim in orci rutrum consectetur. Nam ipsum odio, vulputate quis tincidunt non, rhoncus in ligula. Mauris ultricies, arcu eu hendrerit condimentum, lacus nibh aliquet ante, a interdum turpis elit sit amet justo. Morbi molestie bibendum quam, eu tempus lacus pharetra id.
