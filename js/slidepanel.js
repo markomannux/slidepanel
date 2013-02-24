@@ -5,45 +5,86 @@
 
       var settings = $.extend( {
         'location'         : 'left',
+        'triggerArea'      : undefined,
+        'backgroundColor'      : 'gray',
+        'width'            : '250'
       }, options);
 
-      this.addClass('panel');
-      var $triggerArea = $('<div class="trigger-area"></div>');
-      this.after($triggerArea);
-      var xDir = 1;
-      this.data('location', settings.location)
-
-      if (settings.location == 'right') {
-        this.addClass('right');
-        $triggerArea.addClass('right');
-        xDir = -1;
+      var hiddenPosition =  settings.width + 'px'
+      if (settings.location == 'left') {
+        hiddenPosition = '-' + hiddenPosition
       }
 
+      this.hide();
+      this.data('hiddenPosition', hiddenPosition)
+      this.data('visiblePosition', '0')
+      var $panelContent = $('<div class="panel-content"></div>').html(this.html());
+
+
+      this.html($panelContent);
+      this.addClass('panel');
+      this.css('background-color', settings.backgroundColor);
+      this.width(settings.width);
+      this.addClass(settings.location);
+
+      this.css('transform', 'translateX(' + this.data('hiddenPosition') + ')');
       var self = this;
 
-      this.bind('swipeone', function(event, obj) {
-        if (obj.direction.lastX == -1*xDir) {
-          methods['hide'].apply(self);
-        }
+      function show(event) {
+        methods['show'].apply(self);
+      };
+
+      function hide(event) {
+        methods['hide'].apply(self);
+      };
+
+      var wipeLeftPanelBehav = hide;
+      var wipeRightPanelBehav = undefined;
+      var wipeLeftTriggerBehav = undefined;
+      var wipeRightTriggerBehav = show;
+
+      if (settings.location == 'right') {
+        this.addClass(settings.location);
+        var wipeLeftPanelBehav = undefined;
+        var wipeRightPanelBehav = hide;
+        var wipeLeftTriggerBehav = show;
+        var wipeRightTriggerBehav = undefined;
+      }
+
+      this.touchwipe({
+        wipeLeft: wipeLeftPanelBehav,
+        wipeRight: wipeRightPanelBehav,
+        preventDefaultEvents: false
       });
 
-      $triggerArea.bind('swipeone', function(event, obj) {
-        console.log(obj);
-        if (obj.direction.lastX == +1*xDir) {
-          methods['show'].apply(self);
-        }
-      });
+      if (settings.triggerArea) {
+        settings.triggerArea.touchwipe({
+          wipeLeft: wipeLeftTriggerBehav,
+          wipeRight: wipeRightTriggerBehav,
+          preventDefaultEvents: false
+        });
+      }
 
       return this;
     },
 
-    hide: function() {
-      this.hide('slide', {direction:this.data('location')}, 500);
+    show: function() {
+      var self = this;
+      this.show({duration:0,
+                 complete:function() {
+        self.animate({transform: 'translateX(0)'});
+      }});
     },
 
-    show: function() {
-      this.show('slide', {direction:this.data('location')}, 500);
-    },
+    hide: function() {
+      var self = this;
+      this.animate({transform: 'translateX(' + this.data('hiddenPosition') + ')'},
+            function() {
+              self.hide();
+            }
+            );
+          }
+
   };
 
   $.fn.slidepanel = function(method, options) {

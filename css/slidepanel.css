@@ -1,19 +1,32 @@
 .panel {
-  width: 204px;
-  background-color: gray;
   height: 100%;
-  overflow-y: auto;
   position: fixed;
+  top: 0;
   z-index: 1000;
+  -moz-box-shadow: 6px 0px 10px 10px #888;
+  -webkit-box-shadow: 6px 0px 10px 10px #888;
+  box-shadow: 0px 0px 19px 4px #888;
 }
 
-.trigger-area {
-  width: 204px;
-  min-height: 100%;
-  position: fixed;
-  z-index: 999;
+.panel-content {
+  overflow-y: auto;
+  height: 100%;
+  margin: 7px;
+}
+
+.panel-handle {
+  position: absolute;
+  top: 10%;
+  left: 250px;
+  background-color: gray;
+  height: 50px;
+  width: 18px;
 }
 
 .right {
   right: 0;
+}
+
+.left {
+  left: 0;
 }
