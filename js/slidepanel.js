@@ -15,7 +15,6 @@
 
       var $panelContent = $('<div class="panel-content"></div>').html(this.html());
 
-
       this.html($panelContent);
       this.addClass('panel');
       this.css('background-color', settings.backgroundColor);
@@ -65,9 +64,10 @@
     show: function() {
       var self = this;
       this.show({duration:0,
-                 complete:function() {
-        self.animate({transform: 'translateX(0)'});
-      }});
+        complete:function() {
+          self.animate({transform: 'translateX(0)'});
+        }
+      });
     },
 
     hide: function() {
@@ -76,11 +76,18 @@
             function() {
               self.hide();
             }
-            );
-          },
+      );
+    },
 
+    toggle: function() {
+      if (this.is(':hidden')) {
+        methods['show'].apply(this);
+      } else {
+        methods['hide'].apply(this);
+      }
+    },
+    
     setLocation: function(location) {
-      
       this.hide({duration:0});
       var hiddenPosition = this.data('width') + 'px'
       if (location == 'left') {
