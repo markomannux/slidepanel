@@ -23,37 +23,34 @@
 
       var self = this;
 
-      function show(event) {
-        methods['show'].apply(self);
+      function wipeRight(event) {
+        if(self.data('location') == 'right'){
+          methods['hide'].apply(self);
+        } else {
+          methods['show'].apply(self);
+        }
       };
 
-      function hide(event) {
-        methods['hide'].apply(self);
+      function wipeLeft(event) {
+        if(self.data('location') == 'left'){
+          methods['hide'].apply(self);
+        } else {
+          methods['show'].apply(self);
+        }
       };
 
-      var wipeLeftPanelBehav = hide;
-      var wipeRightPanelBehav = undefined;
-      var wipeLeftTriggerBehav = undefined;
-      var wipeRightTriggerBehav = show;
-
-      if (settings.location == 'right') {
-        this.addClass(settings.location);
-        var wipeLeftPanelBehav = undefined;
-        var wipeRightPanelBehav = hide;
-        var wipeLeftTriggerBehav = show;
-        var wipeRightTriggerBehav = undefined;
-      }
+      this.addClass(settings.location);
 
       this.touchwipe({
-        wipeLeft: wipeLeftPanelBehav,
-        wipeRight: wipeRightPanelBehav,
+        wipeLeft: wipeLeft,
+        wipeRight: wipeRight,
         preventDefaultEvents: false
       });
 
       if (settings.triggerArea) {
         settings.triggerArea.touchwipe({
-          wipeLeft: wipeLeftTriggerBehav,
-          wipeRight: wipeRightTriggerBehav,
+          wipeLeft: wipeLeft,
+          wipeRight: wipeRight,
           preventDefaultEvents: false
         });
       }
@@ -88,6 +85,7 @@
     },
     
     setLocation: function(location) {
+      this.data('location', location);
       this.hide({duration:0});
       var hiddenPosition = this.data('width') + 'px'
       if (location == 'left') {
